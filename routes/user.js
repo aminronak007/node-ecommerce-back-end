@@ -22,7 +22,7 @@ router.post("/api/user/address", saveAddress);
 router.post("/api/user/address-details", getUserAddress);
 
 router.post("/api/user/order", createOrder);
-router.post("/api/orders", orders);
+router.post("/api/user/orders", orders);
 
 router.post("/api/user/cart/coupon", applyCouponToUserCart);
 

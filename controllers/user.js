@@ -169,9 +169,8 @@ exports.createOrder = async (req, res) => {
 };
 
 exports.orders = async (req, res) => {
-  // console.log(req.body);
-  // return;
   let { email } = req.body.user;
+
   let user = await User.findOne({ email }).lean();
   let userOrders = "";
   if (user._id) {
@@ -179,8 +178,6 @@ exports.orders = async (req, res) => {
       .populate("products.product")
       .lean();
   }
-
-  // console.log(userOrders);
 
   res.json({ userOrders });
 };

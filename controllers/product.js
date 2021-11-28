@@ -6,7 +6,7 @@ const slugify = require("slugify");
 
 exports.createProducts = async (req, res) => {
   try {
-    req.body.slug = slugify(req.body.productproductName);
+    req.body.slug = slugify(req.body.productName);
     const newProduct = await new Product(req.body).save();
     res.json(newProduct);
   } catch (err) {
@@ -160,7 +160,7 @@ exports.productRating = async (req, res) => {
       },
       { new: true }
     );
-    console.log("ratingAdded", ratingAdded);
+    // console.log("ratingAdded", ratingAdded);
     res.json({ success: "Ratings added Successfully." });
   } else {
     const ratingUpdated = await Product.updateOne(

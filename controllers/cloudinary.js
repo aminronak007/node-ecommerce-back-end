@@ -14,7 +14,6 @@ exports.upload = async (req, res) => {
 
   let result = await cloudinary.uploader.upload(req.body.image, {
     folder: `${catName}/${subName}/${productName}`,
-
     public_id: `${Date.now()}`,
     resource_type: "auto",
   });
