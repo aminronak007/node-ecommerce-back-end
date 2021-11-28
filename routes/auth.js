@@ -69,7 +69,7 @@ router.post("/api/login", async (req, res) => {
 
   const pass = await bcrypt.compare(password, user.password); // Comparing Password
 
-  if (!pass) return res.json({ error: "Email or Password id Wrong !!!" }); // Checkinmg password
+  if (!pass) return res.json({ error: "Email Id or Password is Wrong !!!" }); // Checkinmg password
 
   const accessToken = await signAccessToken(user);
 
