@@ -308,6 +308,7 @@ const handleBrand = async (req, res, brand) => {
 };
 
 exports.searchFilters = async (req, res) => {
+  // console.log(req.body);
   const { query, price, category, stars, sub, shipping, color, brand } =
     req.body;
 
